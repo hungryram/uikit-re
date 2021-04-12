@@ -1,0 +1,97 @@
+/* TYPOGRAPHY */
+
+p {
+    line-height: 1.7;
+}
+
+/* OVERWRITE */
+
+div.uk-card-default {
+    background: #6CB00B;
+    border-radius: 8px;
+}
+
+.uk-white {
+    color: #fff;
+}
+
+p.hr-dark {
+    color: #01031f;
+}
+
+.uk-dim {
+    color: rgb(187 187 187 / 70%);
+}
+
+a.uk-button.uk-button-secondary {
+    background: #fff;
+    color: #01031f;
+    border-radius: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+a.uk-button.uk-button-primary {
+    background: #6CB00B;
+    border-radius: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+a:hover {
+    text-decoration: none!important;
+}
+
+.accent {
+    color: #6CB00B
+}
+
+.uk-padding-xlarge {
+    padding: 120px;
+}
+
+/* NAVBAR */
+
+ul.uk-navbar-nav>li>a {
+    color: #b5b5b5;
+}
+
+nav.uk-navbar-container.uk-navbar-transparent {
+    position: relative;
+    z-index: 100;
+}
+
+/* HERO */
+
+div.hero-form {
+    background: white;
+    border-radius: 8 px;
+}
+
+input.uk-input {
+    background-color: #eee;
+    border-radius: 50px;
+}
+
+textarea.uk-textarea {
+    background-color: #eee;
+    border-radius: 15px;
+}
+
+button.uk-button {
+    border-radius: 50px;
+    background: #6CB00B;
+    transition: .3s;
+    padding: 8px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #222;
+}
+
+.hr-legals li {
+    display: inline-block;
+    margin-right: 10px;
+}

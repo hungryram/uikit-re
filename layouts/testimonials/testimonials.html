@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div uk-grid>
+    {{ if gt .Params.testimonials 0 }}
+    {{ range .Params.testimonials }}
+        <div class="uk-width-1-2">
+            <p>{{ .testimonial }}</p>
+        </div>
+    {{ end }}
+    {{ else }}
+        <h4 class="title is-6 has-text-centered">No testimonials have been added yet</h4>
+    {{ end }}
+</div>
+{{ end }}

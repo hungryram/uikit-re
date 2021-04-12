@@ -1,0 +1,50 @@
+<footer>
+    <div class="uk-section">
+        <div class="uk-container">
+            <div class="uk-child-width-expand@s uk-grid-large" uk-grid>
+                <div>
+                    <h1 class="uk-text-bold uk-text-large"><span class="uk-white">Landscaping <span class="accent">Tecpoyotl Inc.</span></span></h1>
+                    <p class="uk-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quisquam accusamus sapiente aspernatur, tempora libero assumenda unde voluptas adipisci totam amet vero, aliquid animi perferendis reprehenderit. Inventore ipsum nemo perferendis!</p>
+                </div>
+                <div>
+                    <h1 class="uk-text-bold uk-text-large uk-white">Contact</h1>
+                    <ul class="uk-list">
+                        <li><a href="" class="uk-light"><span href="#" uk-icon="icon: mail" class="uk-margin-small-right"></span><span class="uk-text-middle">luis@landscapeTecpoyotl.com</span></a></li>
+                        <li><a href="/faq" class="uk-light"><span href="#" uk-icon="icon: phone" class="uk-margin-small-right"></span><span class="uk-text-middle">555-555-5555</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1 class="uk-text-bold uk-text-large uk-white">Quick Links</h1>
+                    <ul class="uk-list">
+                        <li><a href="" class="uk-light">Services</a></li>
+                        <li><a href="" class="uk-light">Contact</a></li>
+                        <li><a href="" class="uk-light">Get an Estimate</a></li>
+                        <li><a href="" class="uk-light">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-section">
+                <hr>
+                <div class="uk-grid">
+                    <div class="uk-width-1-2">
+                        <p class="uk-light uk-text-small">&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a></p>
+                        <ul class="hr-legals uk-padding-remove">
+                            {{ range where $.Site.Pages.ByWeight "Type" "legal" }}
+                            <li class="uk-light uk-text-small"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                            {{ end }}
+                          </ul>
+                    </div>
+                    <div class="uk-width-1-2 uk-text-right">
+                        {{ if .Site.Data.profile.social_media.instagram }}<a href="" class="uk-icon-button uk-margin-small-right" uk-icon="instagram"></a>{{ end }}
+                        {{ if .Site.Data.profile.social_media.facebook }}<a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>{{ end }}
+                        {{ if .Site.Data.profile.social_media.pinterest }}<a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest"></a>{{ end }}
+                        {{ if .Site.Data.profile.social_media.twitter }}<a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter"></a>{{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
