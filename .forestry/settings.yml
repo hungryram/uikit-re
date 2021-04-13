@@ -24,14 +24,14 @@ sections:
   label: Services
   create: all
   match: "**/*"
+- type: document
+  path: content/testimonials/_index.md
+  label: Testimonials
 - type: directory
   path: content
   label: Pages
   create: all
   match: "*"
-- type: document
-  path: content/testimonials/_index.md
-  label: Testimonials
 upload_dir: templates/realestate2
 public_path: https://res.cloudinary.com/hungryram19/image/upload
 front_matter_path: ''
