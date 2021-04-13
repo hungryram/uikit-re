@@ -1,0 +1,30 @@
+---
+location_information:
+  state: []
+  address: ''
+  city: ''
+  zip_code: 
+primary_company_name: Real Estate Company
+primary_contact:
+  full_name: Ram Dettmer
+  email: ram@hungryram.com
+  title: ''
+  phone: ''
+  mobile_phone: ''
+  license_type: ''
+  license_number: ''
+social_accounts:
+  instagram: ''
+  facebook: ''
+  twitter: ''
+  youtube: ''
+  linkedin: ''
+  pinterest: ''
+  zillow: ''
+  redfin: ''
+  realtor: ''
+  trulia: ''
+  reddit: ''
+search_engine_optimization:
+  title_tag: ''
+  meta_description: ''
