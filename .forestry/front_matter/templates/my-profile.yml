@@ -221,5 +221,3 @@ fields:
     template: seo
     label: SEO
   label: Search Engine Optimization
-pages:
-- data/profile.yaml
