@@ -16,11 +16,11 @@ fields:
     schema:
       format: markdown
   label: Body
-- name: seo
-  type: include
-  config: {}
-  template: seo
-  label: SEO
+- name: banner_image
+  type: file
+  config:
+    maxSize: 64
+  label: Banner Image
 - name: testimonials
   type: field_group_list
   fields:
@@ -58,5 +58,10 @@ fields:
     max: 
     labelField: 
   label: Testimonials
+- name: seo
+  type: include
+  config: {}
+  template: seo
+  label: SEO
 pages:
 - content/testimonials/_index.md
