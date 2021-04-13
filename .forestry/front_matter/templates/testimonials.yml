@@ -1,6 +1,6 @@
 ---
 label: Testimonials
-hide_body: false
+hide_body: true
 fields:
 - name: testimonials
   type: field_group_list
