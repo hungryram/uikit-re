@@ -2,64 +2,28 @@
 label: Testimonials
 hide_body: false
 fields:
-- name: title
-  type: text
+- name: testimonials
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config:
+      required: false
+    label: Name
+  - name: review
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Review
   config:
-    required: false
-  label: Full Name
-- name: weight
-  type: number
-  label: Order Testimonial
-  description: Enter 1 to display as the first testimonial and 2 and so on as the
-    next..
-  default: 50
-  required: true
-  config:
-    min: 1
+    min: 
     max: 
-    step: 
-- name: occupation
-  type: text
-  config:
-    required: false
-  label: Occupation
-- name: photo
-  type: file
-  config:
-    maxSize: 1
-  label: Photo
-- name: date_published
-  type: datetime
-  label: Date
-  description: ''
-  config:
-    required: false
-    date_format: MM/DD/YYYY
-    time_format: 
-    display_utc: false
-    export_format: MM/DD/YYYY
-- name: source_link
-  type: text
-  config:
-    required: false
-  label: Source Link
-  description: Add a source link where the review came from
-- name: source_label
-  type: text
-  config:
-    required: false
-  label: Source Label
-- name: external_link
-  type: text
-  config:
-    required: false
-  label: Link
-  description: Add an external link
-- name: link_label
-  type: text
-  config:
-    required: false
-  label: Link Label
+    labelField: 
+  label: Testimonials
 - name: search_engine_optimization
   type: field_group
   config: {}
