@@ -6,16 +6,16 @@ fields:
   type: text
   config:
     required: true
-  label: Property Address
+  label: Address
   description: Enter the address as the title
-- name: city
+- name: cities
   type: text
   config:
     required: false
   label: City
 - name: states
   type: select
-  default: []
+  default: ''
   config:
     required: false
     options:
@@ -75,23 +75,30 @@ fields:
       file: 
       path: 
   label: State
-- name: zip
-  type: number
-  label: Zip Code
-  description: ''
-  default: 0
-  required: true
-  config:
-    min: 
-    max: 
-    step: 
-- name: short_description
+- name: zip-codes
   type: text
   config:
-    required: true
+    required: false
+  label: Zip Code
+- name: short_title
+  type: text
+  config:
+    required: false
     max: 30
   label: Short Title
   description: 'Example: Luxury Listing'
+- name: price
+  type: text
+  config:
+    required: false
+  label: Price
+- name: schema_price
+  type: text
+  config:
+    required: false
+  description: The listing price but use only decimal. This is for SEO purposes on
+    Schema.
+  label: Schema Price
 - name: status
   type: select
   default: ''
@@ -113,28 +120,26 @@ fields:
       file: 
       path: 
   label: Property Status
-- name: featured_listing
-  type: boolean
-  label: Featured Listing
-  description: Toggle to feature this listing
-- name: weight
-  type: number
-  label: Price
-  description: ''
-  default: 0
-  required: true
-  config:
-    min: 0
-    max: 
-    step: 
-    required: true
-- name: type
+- name: featured
   type: select
   default: []
   config:
     required: false
     options:
-    - Acreage/Land
+    - Featured
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Featured
+- name: properties
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Acreage and Land
     - Commercial
     - Condo
     - Townhome
@@ -144,7 +149,7 @@ fields:
     - Farmranch
     - Cabin
     - Mobile Home
-    - Multi-family
+    - Multi-Family
     - New Construction
     - Rental
     - Single Family
@@ -156,6 +161,16 @@ fields:
       file: 
       path: 
   label: Property Type
+- name: date
+  type: datetime
+  label: Date
+  config:
+    required: false
+    date_format: MM/DD/YYYY
+    time_format: 
+    display_utc: false
+    export_format: MM/DD/YYYY
+  description: Date of published listing or last modified.
 - name: listing_agent
   type: field_group
   config: {}
@@ -168,7 +183,7 @@ fields:
       options: []
       source:
         type: pages
-        section: teams
+        section: my-team
         file: 
         path: 
     label: Listing Agent
@@ -189,58 +204,25 @@ fields:
     type: text
     description: ''
     default: 0
-    config:
-      min: 0
-      max: 
-      step: 
     label: Square Footage
   - name: lot_size
     type: text
     label: Lot Size
-    description: ''
-    default: 0
-    config:
-      min: 0
-      max: 
-      step: 
   - name: year_built
     type: text
     label: Year Built
-    description: ''
-    default: 0
-    config:
-      min: 0
-      max: 
-      step: 
   - name: bedrooms
     type: text
     label: Bedrooms
-    description: ''
-    default: 0
-    config:
-      min: 0
-      max: 
-      step: 
   - name: bathrooms
     type: text
     label: Bathrooms
-    description: ''
-    default: 0
-    config:
-      min: 0
-      max: 
-      step: 
-      required: false
   - name: hoa
     type: text
     label: HOA
-    description: Enter 0 if none.
-    default: 0
   - name: garage
     type: text
     label: Garage
-    description: Enter 0 if none
-    default: 0
   label: Details
 - name: utilities_and_features
   type: field_group
@@ -456,14 +438,6 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: main_photo
-    type: file
-    config:
-      maxSize: 5
-    label: Main Photo
-    default: "/uploads/main-house-photo.jpg"
-    description: Photos that are larger in size will take time to upload. We recommend
-      using optimized photos.
   - name: gallery
     type: image_gallery
     config: {}
@@ -499,7 +473,7 @@ fields:
     config:
       required: false
     label: Open House Date
-    default: No Open House Available
+    default: ''
   - name: open_house_details
     type: textarea
     default: ''
@@ -531,3 +505,11 @@ fields:
   config: {}
   template: url
   label: URL
+pages:
+- content/listings/1308-e-49th-st.md
+- content/listings/194-mercer-street-1.md
+- content/listings/2208-southwest-dr.md
+- content/listings/2436-sw-8th-st.md
+- content/listings/3385-pan-american-dr.md
+- content/listings/5760-crenshaw-blvd.md
+- content/listings/905-brickell-bay-dr.md
