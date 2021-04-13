@@ -56,7 +56,7 @@ sections:
   - heading-and-body
   - offices
 - type: directory
-  path: content/our-team
+  path: content/team
   label: My Team
   create: documents
   match: "**/*"
