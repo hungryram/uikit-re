@@ -11,8 +11,9 @@ body em {
 /* OVERWRITE */
 
 div.uk-card-default {
-    background: #6CB00B;
-    border-radius: 8px;
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid #eee;
 }
 
 .uk-white {
@@ -27,23 +28,24 @@ p.hr-dark {
     color: rgb(187 187 187 / 70%);
 }
 
-a.uk-button.uk-button-secondary {
-    background: #fff;
-    color: #01031f;
-    border-radius: 50px;
+body .uk-button.uk-button-secondary {
+    background: #222;
+    color: #fff;
     padding-top: 8px;
     padding-bottom: 8px;
+    transition: .3s;
 }
 
 a.uk-button.uk-button-primary {
     background: #6CB00B;
-    border-radius: 50px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
 a:hover {
     text-decoration: none!important;
+    transition: .3s;
+
 }
 
 .accent {
@@ -82,12 +84,6 @@ textarea.uk-textarea {
     border-radius: 15px;
 }
 
-button.uk-button {
-    border-radius: 50px;
-    background: #6CB00B;
-    transition: .3s;
-    padding: 8px;
-}
 
 /* FOOTER */
 

@@ -7,119 +7,30 @@
 {{ if eq "home-testimonial" .template }}
 <div class="uk-section">
   <div class="uk-container">
-    <div class="uk-slider-container-offset" uk-slider>
-
-      <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
-  
-          <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
-              <li>
+    <div class="uk-slider-container-offset" uk-slider="autoplay: true">
+      <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+          <ul class="uk-slider-items uk-child-width-1-2@s uk-grid" uk-height-match="target: > div > .uk-card">
+            {{ range where $.Site.Pages "Type" "testimonials" }}
+            {{ range .Params.testimonials }}
+              <li uk-height-match>
                   <div class="uk-card uk-card-default">
-                      <div class="uk-card-media-top">
-                          <img src="images/photo.jpg" alt="">
-                      </div>
                       <div class="uk-card-body">
-                          <h3 class="uk-card-title">Headline</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                          <p>{{ .review | truncate 150 }}</p>
+                          <strong>{{ .name }}</strong>
                       </div>
                   </div>
               </li>
-              <li>
-                  <div class="uk-card uk-card-default">
-                      <div class="uk-card-media-top">
-                          <img src="images/dark.jpg" alt="">
-                      </div>
-                      <div class="uk-card-body">
-                          <h3 class="uk-card-title">Headline</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                      </div>
-                  </div>
-              </li>
-              <li>
-                  <div class="uk-card uk-card-default">
-                      <div class="uk-card-media-top">
-                          <img src="images/light.jpg" alt="">
-                      </div>
-                      <div class="uk-card-body">
-                          <h3 class="uk-card-title">Headline</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                      </div>
-                  </div>
-              </li>
-              <li>
-                  <div class="uk-card uk-card-default">
-                      <div class="uk-card-media-top">
-                          <img src="images/photo2.jpg" alt="">
-                      </div>
-                      <div class="uk-card-body">
-                          <h3 class="uk-card-title">Headline</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                      </div>
-                  </div>
-              </li>
-              <li>
-                  <div class="uk-card uk-card-default">
-                      <div class="uk-card-media-top">
-                          <img src="images/photo3.jpg" alt="">
-                      </div>
-                      <div class="uk-card-body">
-                          <h3 class="uk-card-title">Headline</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                      </div>
-                  </div>
-              </li>
+            {{ end }}
+            {{ end }}
           </ul>
-  
           <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
           <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-  
       </div>
-  
-      <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
-  
+        <p class="uk-text-right">
+          <a class="uk-button uk-button-default" href="/testimonials">View all testimonials</a>
+        </p>
   </div>
   </div>
-</div>
-
-<div class="section">
-<div class="container">
-    <div class="columns">
-        <div class="column">
-            {{ if .heading }}<h1 class="title is-4 has-text-centered">{{ .heading }}</h1>{{ end }}
-            {{ if .body }}
-            <p class="has-text-centered">{{ .body | markdownify }}</p>
-            {{ end }}
-        </div>
-    </div>
-    <div class="testimonial-container">
-        {{ range where $.Site.Pages "Type" "testimonials" }}
-        <div class="responsive-slide">
-            {{ range .Params.testimonials }}
-            <div class="testimonial">
-                <div class="card-content">
-                  <div class="content">
-                    <p>{{ .testimonial | truncate 170 }} <a href="/testimonial" class="link">Read more</a></p>
-                  </div>
-                  <div class="media">
-                    <div class="media-left">
-                        {{ if .image }}<img src="/assets/user.svg" alt="{{ .name }}">{{ end }}
-                    </div>
-                    <div class="media-content">
-                      <em>{{ .name }}</em>
-                      <em class="is-block">{{ .date }}</em>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {{ end }}
-        </div>
-        {{ end }}
-    </div>
-    <div class="columns mt-6">
-      <div class="column has-text-centered">
-        <a href="/testimonials" class="btn-primary">View more</a>
-      </div>
-    </div>
-</div>
 </div>
 {{ end }}
 

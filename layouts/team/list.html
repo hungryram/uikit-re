@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="uk-section">
+    <div class="uk-container">
+        {{ $agentCount := len (where .Site.RegularPages "Section" "==" "team")  }}
+        {{ $agentContact := .Params.contact }}
+        {{ if gt $agentCount 0 }}
+
+        {{ $paginator := .Paginate (where .Pages "Type" "team") 10 }}
+        <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center" uk-grid>
+            {{ range $paginator.Pages.ByWeight }}
+            <div class="uk-text-center">
+                <a href="{{ .Permalink }}">
+                    <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
+                        <img data-src="{{ .Params.details.agent_photo }}" alt="{{ .Title }}" uk-cover uk-img>
+                        <canvas width="" height="400"></canvas>
+                        <div class="uk-position-center">
+                            <span class="uk-transition-fade uk-button uk-button-secondary">Learn More</span>
+                        </div>
+                    </div>
+                    <h4 class="uk-margin-small-top" style="margin-bottom:10px">{{ .Title }}</h4>
+                    <h5 class="uk-margin-remove uk-text-uppercase">{{ .Params.details.title }}</h5>
+                </a>
+            </div>  
+            {{ end }}
+        </div>
+
+
+        {{ else }}
+test
+        {{ end }}
+    </div>
+</div>
+{{ end }}
