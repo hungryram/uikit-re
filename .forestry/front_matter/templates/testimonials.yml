@@ -19,7 +19,7 @@ fields:
 - name: banner_image
   type: file
   config:
-    maxSize: 64
+    maxSize: 2
   label: Banner Image
 - name: testimonials
   type: field_group_list
