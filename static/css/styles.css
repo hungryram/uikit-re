@@ -4,6 +4,10 @@ p {
     line-height: 1.7;
 }
 
+body em {
+    color: inherit;
+}
+
 /* OVERWRITE */
 
 div.uk-card-default {
