@@ -1,4 +1,5 @@
 +++
+photo = "https://res.cloudinary.com/hungryram19/image/upload/v1605402064/templates/realestate2/40903982-31JPG_vngwwc.jpg"
 title = "Luxury Office"
 url = ""
 [contact]
