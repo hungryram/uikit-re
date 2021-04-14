@@ -6,10 +6,10 @@
 </div>
 <div class="uk-section">
     <div class="uk-container">
-        {{ $agentCount := len (where .Site.RegularPages "Section" "==" "team")  }}
-        {{ if gt $agentCount 0 }}
+        {{ $officeCount := len (where .Site.RegularPages "Section" "==" "offices")  }}
+        {{ if gt $officeCount 0 }}
 
-        {{ $paginator := .Paginate (where .Pages "Type" "team") 10 }}
+        {{ $paginator := .Paginate (where .Pages "Type" "offices") 10 }}
         <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center" uk-grid>
             {{ range $paginator.Pages.ByWeight }}
             <div class="uk-text-center">

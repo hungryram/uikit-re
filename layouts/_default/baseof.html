@@ -2,9 +2,13 @@
 {{ partial "global/navbar" . }}
 
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+{{ if .Params.banner_image }}
      data-src="{{ .Params.banner_image }}?fit=crop&w=650&h=433&q=80"
      data-srcset="{{ .Params.banner_image }}?fit=crop&w=650&h=433&q=80 650w,
      {{ .Params.banner_image }}?fit=crop&w=1300&h=866&q=80 1300w"
+{{ else }}
+    data-src="https://res.cloudinary.com/hungryram19/image/upload/v1605403400/templates/realestate2/officespace_br6fie.jpg"
+{{ end }}
      data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
     <h1>{{ .Title }}</h1>
 </div>
