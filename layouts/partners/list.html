@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <div class="uk-section">
     <div class="uk-container uk-container-small">
         {{ .Params.body }}
@@ -7,25 +6,24 @@
 </div>
 <div class="uk-section">
     <div class="uk-container">
-        {{ $officeCount := len (where .Site.RegularPages "Section" "==" "offices")  }}
-        {{ if gt $officeCount 0 }}
-        {{ $officeContact := .Params.contact }}
-        {{ $officeContact }}
-        {{ $paginator := .Paginate (where .Pages "Type" "offices") 10 }}
+        {{ $partners := len (where .Site.RegularPages "Section" "==" "partners")  }}
+        {{ if gt $partners 0 }}
+
+        {{ $paginator := .Paginate (where .Pages "Type" "partners") 10 }}
         <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center" uk-grid>
             {{ range $paginator.Pages.ByWeight }}
             <div class="uk-text-center">
                 <a href="{{ .Permalink }}">
                     <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0">
-                        <img data-src="{{ .Params.photo }}" alt="{{ .Title }}" uk-cover uk-img>
+                        <img data-src="{{ .Params.photo_or_logo }}" alt="{{ .Title }}" uk-cover uk-img>
                         <canvas width="" height="400"></canvas>
                         <div class="uk-position-center">
                             <span class="uk-transition-fade uk-button uk-button-secondary">Learn More</span>
                         </div>
                     </div>
                     <h4 class="uk-margin-small-top" style="margin-bottom:10px">{{ .Title }}</h4>
-                    {{ if .Params.contact.office_phone }}<a href="tel:{{ .Params.contact.office_phone }}" class="uk-link-muted">{{ .Params.contact.office_phone }}</a>{{ end }}
-                    {{ if .Params.contact.email }}<br><a href="tel:{{ .Params.contact.email }}" class="uk-link-muted">{{ .Params.contact.email }}</a>{{ end }}
+                    <h5 class="uk-margin-remove uk-text-uppercase">{{ .Params.details.category }}</h5>
+                    <p>{{ .Content | truncate 100 }} <a href="{{ .Permalink }}" class="uk-link-muted">Read more</a></p>
                 </a>
             </div>  
             {{ end }}
