@@ -7,11 +7,11 @@ fields:
   config:
     required: true
   label: Office Name
-- name: url
-  type: include
-  config: {}
-  template: url
-  label: URL
+- name: photo
+  type: file
+  config:
+    maxSize: 2
+  label: Photo
 - name: contact
   type: field_group
   config: {}
@@ -114,16 +114,6 @@ fields:
       step: 
     label: Zip Code
   label: Contact
-- name: photos
-  type: field_group
-  config: {}
-  fields:
-  - name: photo
-    type: file
-    config:
-      maxSize: 5
-    label: Photo
-  label: Photo
 - name: search_engine_optimization
   type: field_group
   config: {}
@@ -134,3 +124,8 @@ fields:
     template: seo
     label: SEO
   label: Search Engine Optimization
+- name: url
+  type: include
+  config: {}
+  template: url
+  label: URL
